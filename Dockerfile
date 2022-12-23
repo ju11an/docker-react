@@ -8,5 +8,5 @@ COPY --chown=node:node . .
 RUN npm run build
 
 FROM nginx
-# should source be absolute?
+EXPOSE 80
 COPY --from=build /home/node/app/build /usr/share/nginx/html
